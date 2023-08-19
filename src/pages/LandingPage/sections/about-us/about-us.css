@@ -35,6 +35,11 @@ section.about-us .about-us--wrapper .about-us--image {
   display: none;
 }
 
+@media screen and (min-width: 351px) and (max-width: 450px) {
+  section.about-us .about-us--wrapper .about-us--content--box {
+    zoom: 0.7;
+  }
+}
 @media screen and (min-width: 900px) {
   section.about-us .about-us--wrapper .about-us--content {
     grid-template-columns: 1fr 1fr;

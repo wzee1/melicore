@@ -65,6 +65,14 @@ section.honeys-landing {
 
 // Media queries
 
+@media screen and (min-width: 351px) and (max-width: 450px) {
+   section.honeys-landing {
+      .honeys-landing--right {
+         zoom: .7;
+      }
+   }
+}
+
 @media screen and (min-width: 600px) {
    section.honeys-landing {
       .honeys-landing--right {

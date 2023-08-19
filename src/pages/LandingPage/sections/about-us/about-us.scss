@@ -45,6 +45,16 @@ section.about-us {
 
 // Media queries
 
+@media screen and (min-width: 351px) and (max-width: 450px) {
+   section.about-us {
+      .about-us--wrapper {
+         .about-us--content {
+            &--box { zoom: .7 }
+         }
+      }
+   }
+}
+
 @media screen and (min-width: 900px) {
    section.about-us {
       .about-us--wrapper {

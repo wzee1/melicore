@@ -94,6 +94,11 @@ section.hero .honeys-hero-image {
   margin-bottom: 1rem;
 }
 
+@media screen and (min-width: 351px) and (max-width: 450px) {
+  section.honeys-grid .honeys-landing--right--carousel--box {
+    zoom: 0.7;
+  }
+}
 @media screen and (min-width: 900px) {
   .honeys-grid {
     grid-template-columns: 1fr 1fr;

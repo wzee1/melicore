@@ -59,7 +59,7 @@ export default function Honeys() {
                />
             </div>
             {queryFound ? honeyBoxes : 
-               <h3 style={{width: "max-content"}}>
+               <h3 style={{width: "fit-content"}}>
                   {language === "en"
                      ? "Product with this name cannot be found!"
                      : "Ilyen nevű termék nem található!"}
