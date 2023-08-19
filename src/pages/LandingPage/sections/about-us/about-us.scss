@@ -1,0 +1,79 @@
+section.about-us {
+   margin-top: 12rem;
+
+   .about-us--header {
+      margin-bottom: 4rem;
+   }
+
+   .about-us--wrapper {
+      display: flex;
+      justify-content: center;
+
+      .about-us--content {
+         display: grid;
+         grid-template-columns: 1fr;
+         gap: 2rem;
+         height: fit-content;
+
+         &--box {
+            width: 25rem;
+            height: 15rem;
+
+            padding: 2rem;
+            border-radius: 1rem;
+
+            text-align: center;
+            background-color: #1d1d1d;
+
+            h3 {
+               line-height: 125%;
+               margin-bottom: 2rem;
+            }
+
+            transition: transform 300ms;
+            &:hover {
+               transform: translateY(-.5rem)
+            }
+         }
+      }
+
+      .about-us--image {
+         display: none;
+      }
+   }
+}
+
+// Media queries
+
+@media screen and (min-width: 900px) {
+   section.about-us {
+      .about-us--wrapper {
+         .about-us--content {
+            grid-template-columns: 1fr 1fr;
+         }
+      }
+   }
+}
+
+@media screen and (min-width: 1100px) {
+   section.about-us {
+      .about-us--wrapper {
+         justify-content: unset;
+
+         .about-us--content {
+            gap: 4rem;
+            height: fit-content;
+   
+            &--box {
+               width: 30rem;
+            }
+         }
+   
+         .about-us--image {
+            display: unset;
+            z-index: -1;
+            transform: translate(-14.5rem, -6rem);
+         }
+      }
+   }
+}

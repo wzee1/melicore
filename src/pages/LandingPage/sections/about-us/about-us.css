@@ -1,0 +1,60 @@
+section.about-us {
+  margin-top: 12rem;
+}
+section.about-us .about-us--header {
+  margin-bottom: 4rem;
+}
+section.about-us .about-us--wrapper {
+  display: flex;
+  justify-content: center;
+}
+section.about-us .about-us--wrapper .about-us--content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+section.about-us .about-us--wrapper .about-us--content--box {
+  width: 25rem;
+  height: 15rem;
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  background-color: #1d1d1d;
+  transition: transform 300ms;
+}
+section.about-us .about-us--wrapper .about-us--content--box h3 {
+  line-height: 125%;
+  margin-bottom: 2rem;
+}
+section.about-us .about-us--wrapper .about-us--content--box:hover {
+  transform: translateY(-0.5rem);
+}
+section.about-us .about-us--wrapper .about-us--image {
+  display: none;
+}
+
+@media screen and (min-width: 900px) {
+  section.about-us .about-us--wrapper .about-us--content {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (min-width: 1100px) {
+  section.about-us .about-us--wrapper {
+    justify-content: unset;
+  }
+  section.about-us .about-us--wrapper .about-us--content {
+    gap: 4rem;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  section.about-us .about-us--wrapper .about-us--content--box {
+    width: 30rem;
+  }
+  section.about-us .about-us--wrapper .about-us--image {
+    display: unset;
+    z-index: -1;
+    transform: translate(-14.5rem, -6rem);
+  }
+}/*# sourceMappingURL=about-us.css.map */

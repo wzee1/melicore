@@ -1,0 +1,139 @@
+section.honeys-landing {
+   display: grid;
+   grid-template-columns: 1fr;
+
+   .honeys-landing--left {
+      order: 1;
+      margin-bottom: 4rem;
+
+      &--desc {
+         margin-bottom: 1.5rem;
+      }
+   }
+
+   .honeys-landing--arrow {
+      opacity: 0;
+      width: 0;
+      transition: opacity 300ms, width 300ms;
+      order: 3;
+   }
+
+   .honeys-landing--right {
+      order: 2;
+
+      &--carousel {
+         height: 15rem;
+         width: auto;
+         zoom: .88;
+         float: right;
+
+         &--box {
+            display: flex;
+            gap: 1rem;
+
+            img {
+               height: fit-content;
+               width: auto;
+            }
+
+            h4 {
+               margin-bottom: .5rem;
+            }
+         }
+      }
+   }
+   
+   .carousel-status {
+      display: none !important;
+   }
+}
+
+.slide {
+   background-color: #1d1d1d;
+   padding: 2rem;
+   border-radius: 1rem;
+
+   p {
+      width: 15rem;
+      margin-bottom: 1rem;
+   }
+
+   .button {
+      margin-bottom: 1rem;
+   }
+}
+
+// Media queries
+
+@media screen and (min-width: 600px) {
+   section.honeys-landing {
+      .honeys-landing--right {
+         &--carousel {
+            zoom: unset;
+         }
+      }
+   }
+}
+
+@media screen and (min-width: 855px) {
+   section.honeys-landing {
+      grid-template-columns: 1fr 1fr;
+   
+      .honeys-landing--left {
+         &--desc {
+            margin-bottom: 1.5rem;
+         }
+      }
+   
+      .honeys-landing--right {
+         &--carousel {
+            height: 15rem;
+            width: auto;
+   
+            &--box {
+               display: flex;
+               gap: 2rem;
+   
+               img {
+                  height: fit-content;
+                  width: auto;
+               }
+   
+               h4 {
+                  margin-bottom: .5rem;
+               }
+            }
+         }
+      }
+      
+      .carousel-status {
+         display: none !important;
+      }
+   }
+}
+
+@media screen and (min-width: 1000px) {
+   section.honeys-landing {
+      grid-template-columns: 2fr 1fr 1fr;
+   
+      .honeys-landing--arrow {
+         order: 2;
+      }
+
+      .honeys-landing--right {
+         order: 3;
+      }
+   }
+}
+
+@media screen and (min-width: 1360px) {
+   section.honeys-landing {
+      grid-template-columns: 1fr 1fr 1fr;
+      .honeys-landing--arrow {
+         opacity: 1;
+         width: 20rem;
+         height: auto;
+         transform: translateY(3rem) rotate(10deg);
+      }
+   }
+}

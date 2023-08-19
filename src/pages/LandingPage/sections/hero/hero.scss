@@ -1,0 +1,183 @@
+// ------------
+// ------------
+// Hero Section
+// ------------
+// ------------
+
+section.hero {
+   margin-top: 11rem;
+   margin-bottom: -4rem;
+   display: grid;
+   grid-template-columns: 1fr;
+   justify-content: flex-start;
+   gap: 4rem;
+   position: relative;
+
+   .hero-left {
+      &--header {
+         font-size: var(--font-size-h1);
+         line-height: 125%;
+         margin-bottom: 1rem;
+      }
+
+      &--desc {
+         font-size: var(--font-size-h4);
+         width: 80%;
+         margin-bottom: 2rem;
+      }
+
+      &--cta {
+         display: flex;
+         flex-direction: column;
+         gap: 1rem;
+         font-size: var(--font-size-h4)
+      }
+      
+      &--scroll {
+         opacity: 0;
+         width: 0;
+         transition: opacity 300ms, width 300ms;
+      }
+   }
+
+   .hero-right {
+      &--rectangle {
+         position: absolute;
+         width: 20rem;
+         height: auto;
+         right: 0;      
+         z-index: -1;
+         transform: rotate(90deg);
+      }
+
+      &--image {
+         width: 18rem;
+         height: auto;
+         margin-top: 3rem;
+         margin-bottom: 8rem;
+         margin-inline: auto;
+      }
+   }
+}
+
+// Media queries
+
+@media screen and (min-width: 730px) {
+   section.hero {
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+
+      .hero-left {
+         &--desc {
+            width: 70%;
+         }
+   
+         &--cta {
+            flex-direction: column;
+         }
+      }
+   
+      .hero-right {
+         &--rectangle {
+            width: 23rem;
+            transform: translateY(-2.5rem) rotate(90deg);
+         }
+      }
+   }
+}
+
+@media screen and (min-width: 960px) {
+   section.hero {
+      .hero-right {
+         &--rectangle {
+            width: 30rem;
+            margin-top: -11rem;
+            transform: rotate(0);
+         }
+
+         &--image {
+            height: 20rem;
+            width: auto;
+            transform: translate(calc(11vw - 4rem), -5rem);
+         }
+      }
+   }
+}
+
+@media screen and (min-width: 1100px) {
+   section.hero {
+      .hero-left {
+         .hero-left--scroll {
+            opacity: 1;
+            width: unset;
+            margin-top: 4rem;
+         }
+      }
+
+      .hero-right--rectangle {
+         width: 35rem;
+      }
+
+      .hero-right--image {
+         height: 25rem;
+         width: auto;
+      }
+   }
+}
+
+@media screen and (min-width: 1400px) {
+   section.hero {
+      .hero-left {
+         .hero-left--scroll {
+            transform: translateX(19.5rem);
+         }
+      }
+
+      .hero-right--rectangle {
+         width: 45rem;
+      }
+
+      .hero-right--image {
+         height: 35rem;
+         width: auto;
+         transform: translate(1rem, -5rem);
+      }
+   }
+}
+
+// Bug Fixes for Header covering the hero image and its rectangle
+
+.transition {
+   transition: 300ms;
+}
+
+.scrolled {
+   background-size: 100% 100% !important;
+}
+
+@media screen and (min-width: 960px) {
+   header.nav-desktop {
+      background-color: unset;
+      background-image: var(--nav-color);
+      background-size: calc(100% - 30.8rem) 100%;
+      background-repeat: no-repeat;
+   }
+}
+
+@media screen and (min-width: 1100px) {
+   header.nav-desktop {
+      background-size: calc(100% - 35.8rem) 100%;
+   }
+}
+
+@media screen and (min-width: 1400px) {
+   header.nav-desktop {
+      background-size: calc(100% - 45.8rem - ((100vw - 1400px) / 2)) 100%;
+   }
+}
+
+@media screen and (min-width: 1412px) {
+   header.nav-desktop {
+      background-size: calc(100% - 45.4rem - ((100vw - 1400px) / 2)) 100%;
+   }
+}

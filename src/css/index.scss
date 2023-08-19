@@ -1,0 +1,440 @@
+// ---------
+// ---------
+// CSS RESET
+// ---------
+// ---------
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+ul, ol { list-style: none; }
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+a {
+   text-decoration: none;
+   color: var(--textColor);
+   -webkit-tap-highlight-color: transparent;
+}
+
+i {
+   cursor: pointer;
+}
+
+img, picture, svg {
+  max-width: 100%;
+  display: block;
+}
+
+h1, h2, h3, h4, h5, h6, p,
+input, button, textarea, select {
+   font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within { scroll-behavior: auto; }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+* { -webkit-tap-highlight-color: transparent; }
+input, textarea, button, select, a { -webkit-tap-highlight-color: transparent; }
+a:focus, a:visited, a:active { -webkit-tap-highlight-color: transparent;}
+
+// ---------
+// ---------
+// CSS SETUP
+// ---------
+// ---------
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap');
+
+html {
+   scroll-behavior: smooth;
+   scroll-padding: 8rem;
+   background-color: var(--bg-color);
+   color: var(--text-color);
+   font-weight: 300;
+   font-family: "Poppins", "sans-serif";
+}
+
+body, #root { overflow-x: hidden !important; }
+
+#loader {
+   position: absolute;
+   top: 40%;
+   left: 50%;
+   transform: translateX(-50%);
+   gap: 2rem;
+   opacity: 1;
+}
+ 
+#content { opacity: 1 }
+
+section:last-child {
+   padding-bottom: 7rem;
+}
+
+:root {
+   --bg-color: #2c2c2c;
+   --nav-color: linear-gradient(#1d1d1d 40%, #2c2c2c 100%);
+   --footer-color: linear-gradient(#2c2c2c 20%, #1d1d1d 100%);
+   --color-primary: #FFB400;
+   --color-primary-dark: #dd9b00;
+   --color-secondary: #F0F7EE;
+   --selection-color: var(--color-primary);
+   --title-color: white;
+   --text-color: white;
+
+   // Font-sizes
+   --font-size-h1: 2rem;
+   --font-size-h2: 1.75rem;
+   --font-size-h3: 1.5rem;
+   --font-size-h4: 1.25rem;
+   --font-size-p: .9rem;
+
+   // Navigation
+   --header-duration: 1s;
+   --nav-duration: calc(var(--header-duration) / 4);
+   --nav-ease: cubic-bezier(0.215, 0.61, 0.355, 1);
+   --space: .75rem;
+   --font-primary: 'Poppins', sans-serif;
+   --font-heading: 'Poppins', serif;
+   --nav-font-size: 10vmin;
+
+   // Nav fix
+   --horizontal-margin: ;
+}
+
+@media screen and (min-width: 1100px) {
+   :root {
+      // Font-sizes
+      --font-size-h1: 3rem;
+      --font-size-h2: 2.5rem;
+      --font-size-h3: 2rem;
+      --font-size-h4: 1.25rem;
+      --font-size-p: 1rem;
+   }   
+}
+
+h1 { font-size: var(--font-size-h1); font-weight: 600; transition: font-size 300ms};
+h2 { font-size: var(--font-size-h2); font-weight: 500; transition: font-size 300ms};
+h3 { font-size: var(--font-size-h3); font-weight: 500; transition: font-size 300ms};
+h4 { font-size: var(--font-size-h4); font-weight: 500; transition: font-size 300ms};
+p { font-size: var(--font-size-p); font-weight: 300; transition: font-size 300ms};
+
+// ----------
+// Scroll Bar
+// ---------- 
+
+html::-webkit-scrollbar {
+   width: .85em;
+   background-color: rgb(30, 30, 30);
+}
+  
+html::-webkit-scrollbar-thumb {
+   background-color: var(--color-primary);
+}
+
+html {
+   scrollbar-color: var(--color-primary) rgb(30, 30, 30);
+}
+
+// ---------
+// Selection
+// ---------
+
+::-moz-selection {
+   background: var(--selection-color);
+}
+ 
+ ::selection {
+   background: var(--selection-color);
+}
+
+
+// ---------------               ---------------------------------
+// ---------------               ---------------------------------
+// UTILITY CLASSES               --------- Change These! ---------
+// ---------------               ---------------------------------
+// ---------------               ---------------------------------
+
+.container {
+   margin-inline: auto;
+   margin-block: 4rem;
+   padding-inline: 2rem;
+   max-width: 1400px;
+}
+
+header.nav-desktop {
+   margin-inline: auto;
+   padding-block: 1rem;
+}
+
+.button {
+   width: fit-content;
+   padding: .5rem 1.5rem;
+   border: 0;
+   border-radius: 2rem;
+   cursor: pointer;
+   transition: background-color 300ms;
+   
+   &.primary-button {
+      background-color: var(--color-primary);
+
+      &:hover {
+         background-color: var(--color-primary-dark);
+      }
+   }
+   
+   &.secondary-button {
+      background-color: #1d1d1d;
+
+      &:hover {
+         background-color: var(--color-primary);
+      }
+   }
+}
+
+.dot-color { color: var(--color-primary) }
+
+.back-to-the-top {
+   position: fixed;
+   z-index: 999;
+   bottom: 1rem;
+   right: 1.5rem;
+
+   width: 3rem;
+   height: 3rem;
+   padding: .5rem;
+   border-radius: 50%;
+
+   background-color: var(--color-primary);
+   display: none;
+   opacity: 0;
+   transition: opacity 300ms;
+   cursor: pointer;
+}
+
+// -------------
+// -------------
+// Media Queries
+// -------------
+// -------------
+
+@media screen and (min-width: 900px) { // Desktop
+   header.nav-mobile {
+      display: none;
+   }
+   
+   header.nav-desktop {
+      display: flex; 
+   }
+}
+
+@media screen and (max-width: 350px) { // Galaxy Fold
+   :root {
+      --font-size-h1: 1.75rem;
+      --font-size-h2: 1.25rem;
+      --font-size-h3: 1.125rem;
+      --font-size-h4: 1rem;
+      --font-size-p: 1rem;
+   
+   }
+
+   .container {
+      padding-inline: 1rem;
+   }
+
+   .back-to-the-top {
+      right: 1rem;
+   }
+
+   .nav-logo-mobile {
+      left: 1rem;
+   }
+
+   header.nav-mobile {
+      .icon--menu-toggle {
+         transform: translateX(1rem);
+      }
+   }
+   
+   section.hero {
+      .hero-left {
+         max-width: 250px;
+
+         &--header, &--desc {
+            width: 100%;
+         }
+
+         &--desc {
+            max-width: max-content;
+            margin-left: 0 !important;
+
+            img { display: none }
+
+            &--nav { gap: .4rem }
+            &--content {
+               border-radius: 0 0 1rem 1rem;
+            }
+         }
+      }
+
+      .hero-right--rectangle {
+         display: none;
+      }
+
+      .hero-right--image {
+         width: 15rem;
+      }
+   }
+   
+   section.honeys-grid {
+      padding-inline: 1rem;
+
+      .honeys-landing--right--carousel--box {
+         zoom: .6;
+      }
+   }
+
+   section.honeys-landing {
+      .honeys-landing--right {
+         margin-inline: auto;
+         &--carousel {
+            zoom: 0.5;
+         }
+      }
+   }
+
+   section.about-us {
+      .about-us--wrapper {
+         zoom: .6
+      }
+   }
+
+   footer {
+      .link-container {
+         .footer-contact ul {
+            display: unset;
+         }
+      }
+   }
+}
+
+@media screen and (min-width: 351px) and (max-width: 450px) {
+   :root {
+      --font-size-h1: 2rem;
+      --font-size-h2: 1.75rem;
+      --font-size-h3: 1.5rem;
+      --font-size-h4: 1.25rem;
+      --font-size-p: .9rem;
+   
+   }
+
+   .container {
+      padding-inline: 2rem;
+   }
+   
+   section.hero {
+      .hero-left {
+         max-width: 380px;
+      
+         &--desc {
+            margin-left: 0 !important;
+            width: 80%;
+            img { display: none }
+         }
+      }
+
+      .hero-right--rectangle {
+         display: unset;
+      }
+   }
+
+   footer {
+      .link-container {
+         .footer-contact ul {
+            display: unset;
+         }
+      }
+   }
+}
+
+@media screen and (min-width: 451px) and (max-width: 500px) {
+   section.hero {
+      .hero-left {
+         max-width: unset;
+
+         &--desc {
+            width: 80%;
+            img {
+               top: 7rem;
+            }
+         }
+      }
+   }
+   
+   section.honeys-landing {
+      .honeys-landing--right {
+         margin-inline: auto;
+         &--carousel {
+            zoom: .8;
+         }
+      }
+   }
+}
+
+// --------------------------------
+// Media Queries for Large Displays
+// --------------------------------
+
+// 2K - 2560x1440
+@media screen and (min-width: 2560px) {
+   body {
+      zoom: calc(2560/1920);
+   }
+
+   header.nav-desktop {
+      padding-inline: calc(var(--horizontal-margin) + 2rem);
+      justify-content: flex-start;
+      gap: 27.5rem; // Change this!
+   }
+}
+
+// 4K - 3840x2160
+@media screen and (min-width: 3840px) {
+   body {
+      zoom: calc(3840/1920);
+   }
+}
+
+// 5K - 5120x2880
+@media screen and (min-width: 5120px) {
+   body {
+      zoom: calc(5120/1920);
+   }
+}
+
+// 8K - 7680x4320
+@media screen and (min-width: 7680px) {
+   body {
+      zoom: calc(7680/1920);
+   }
+}

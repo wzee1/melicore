@@ -1,0 +1,21 @@
+<svg width="20" height="48" viewBox="0 0 20 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <style>
+      svg .svg-scroll {
+         animation: svg-scroll 3s infinite;
+      }
+
+      @keyframes svg-scroll {
+         from {
+            transform: translateY(0px);
+         }
+         50% {
+            transform: translateY(55%);
+         }
+         to {
+            transform: translateY(0px);
+         }
+      }
+   </style>
+   <rect x="0.5" y="0.5" width="19" height="47" rx="9.5" stroke="white"/>
+   <path class="svg-scroll" d="M8 10C8 8.89543 8.89543 8 10 8V8C11.1046 8 12 8.89543 12 10V10C12 11.1046 11.1046 12 10 12V12C8.89543 12 8 11.1046 8 10V10Z" fill="#FFB400"/>
+</svg>

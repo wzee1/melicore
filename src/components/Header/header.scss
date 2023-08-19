@@ -1,0 +1,287 @@
+// ----------
+// ----------
+// NAVIGATION
+// ----------
+// ----------
+
+.nav-logo-mobile {
+   position: absolute;
+   top: 1.3rem;
+   left: 2rem;
+
+   --size: calc(2.5rem + 4vmin);
+   width: var(--size);
+   height: auto;
+}
+
+.language-selector--mobile {
+   position: absolute;
+   top: 2.25rem;
+   left: 1.5rem;
+
+   border-radius: 2rem;
+   padding: .25rem;
+}
+
+.language-selector--desktop {
+   border-radius: 2rem;
+   padding: .25rem;
+   background-color: var(--color-primary);
+}
+
+// .nav-logo-mobile's open-phase class
+#open-phased {
+   color: var(--text-color);
+   cursor: pointer;
+   left: 0;
+   padding: var(--space) calc(var(--space) * 2) calc(var(--space) + 1vmin / 2);
+   padding-top: 0;
+}
+
+header.nav-mobile {
+   .main-navigation-toggle {
+      position: fixed;
+      height: 1px; 
+      width: 1px;
+      overflow: hidden;
+      clip: rect(1px, 1px, 1px, 1px);
+      white-space: nowrap;
+      
+      + label {
+         position: fixed;
+         top: calc(var(--space) * 1.5);
+         right: calc(var(--space) * 2);
+         cursor: pointer;
+         z-index: 1001;
+         
+         background-color: var(--nav-color);
+         border-radius: 50%;
+         padding: .5rem;
+      }
+   }
+
+   .icon--menu-toggle {
+      --size: calc(2rem + 4vmin);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: var(--size);
+      height: var(--size);
+      stroke-width: 6;
+
+      background-color: var(--color-secondary);
+      padding: .5rem;
+      border-radius: 50%;
+   }
+    
+   .icon-group {
+      transform: translateX(0);
+      transition: transform var(--nav-duration) var(--nav-ease);
+   }
+    
+   .icon--menu {
+      stroke: var(--color-primary);
+   }
+    
+   .icon--close {
+      stroke: var(--color-primary);
+      transform: translateX(-100%);
+   }
+    
+   .main-navigation {
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      transform: translateX(-100%);
+      transition: transform var(--nav-duration);
+      z-index: 1000;
+      
+      &:after {
+         content: '';
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background-color: var(--color-primary);
+         transform-origin: 0 50%;
+         z-index: -1;
+      }
+
+      ul {
+         font-size: var(--nav-font-size);
+         font-family: var(--font-heading);
+         width: 100%;
+      }
+      
+      li {
+         --border-size: 1vmin;
+         display: flex;
+         align-items: center;
+         position: relative;
+         overflow: hidden;
+
+         a {
+            display: inline-block;
+            width: 100%;
+            max-width: 1600px;
+            margin: 0 auto;
+            color: var(--color-secondary);
+            line-height: 1;
+            text-decoration: none;
+            user-select: none;
+            padding: var(--space) calc(var(--space) * 2) calc(var(--space) + var(--border-size) / 2);
+            transform: translateY(100%);
+   
+            transition: .2s;
+   
+            &:hover {
+               padding-inline: 2rem;
+            }
+         }
+      }
+   }
+    
+   .main-navigation-toggle:checked {
+      ~ label .icon--menu-toggle {    
+         .icon-group {
+            transform: translateX(100%);
+         }
+      }
+      
+      ~ .main-navigation {
+         transition-duration: 0s;
+         transform: translateX(0);
+        
+         &:after {
+            animation: nav-bg var(--nav-duration) var(--nav-ease) forwards;
+         }
+        
+         /*// Line animation
+         li:after {
+            animation: nav-line var(--header-duration) var(--nav-ease) forwards;
+         }*/
+        
+         a {
+            animation: link-appear calc(var(--header-duration) * 1.5) var(--nav-ease) forwards;
+         }
+        
+         // Change x in "through x" according to the links' count   
+         @for $i from 1 through 5 {
+            li:nth-child(#{$i}) {
+               &:after, a {
+                  animation-delay: calc((var(--header-duration) / 2) * #{$i} * 0.125);
+               }
+            }
+         }
+      }
+   }
+   
+   // For the lines
+   @keyframes nav-line {
+      0%   { transform: scaleX(0); transform-origin: 0 50%; }
+      35%  { transform: scaleX(1.001); transform-origin: 0 50%; }
+      65%  { transform: scaleX(1.001); transform-origin: 100% 50%; }
+      100% { transform: scaleX(0); transform-origin: 100% 50%; }
+   }
+   
+   @keyframes nav-bg {
+      from { transform: translateX(-100%) skewX(-15deg) }
+      to { transform: translateX(0) }
+   }
+
+   // Default: 0%, 25% --> 50%, 100% 
+   @keyframes link-appear {
+      0%        { transform: translateX(-100%); }
+      30%, 100% { transform: translateX(0); }
+   }
+}
+
+header.nav-desktop {
+   display: none;
+   justify-content: space-between;
+   align-items: center;
+   flex-direction: row;
+   
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100vw;
+   z-index: 1000;
+   
+   background: var(--nav-color);
+
+   .nav-logo {
+      img {
+         width: 21rem;
+         height: auto;
+      }
+   }
+
+   ul {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      transition: margin-right 300ms;
+
+      li {
+         font-size: 1.1rem;
+         
+         a {
+            position: relative;
+            color: var(--text-color);
+
+            &:after {
+               content: '';
+               position: absolute;
+
+               bottom: 0;
+               left: 0;
+               right: 0;
+               margin: auto;
+               width: 0%;
+
+               transition: .2s;
+               background: var(--color-primary);
+               height: 2px;
+            }
+
+            &:hover:after {
+               width: 100%;
+             }
+         }
+      }
+   }
+}
+
+// Media queries to position ul
+@media screen and (min-width: 1100px) {
+   header.nav-desktop ul {
+      margin-right: 2rem;
+   }
+}
+
+@media screen and (min-width: 1400px) {
+   header.nav-desktop ul {
+      margin-right: 7rem;
+   }
+}
+
+// ---------
+// Bug Fixes
+// ---------
+@media screen and (min-width: 1350px) {
+   header.nav-desktop {
+      padding-inline: calc((100vw - 1350px)/2);
+   }
+}
+
+@media screen and (max-width: 1415px) {
+   header.nav-desktop {
+      padding-inline: 2rem;
+   }
+}
