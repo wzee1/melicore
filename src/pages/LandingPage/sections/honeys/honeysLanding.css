@@ -17,6 +17,7 @@ section.honeys-landing .honeys-landing--arrow {
 }
 section.honeys-landing .honeys-landing--right {
   order: 2;
+  margin-inline: auto;
 }
 section.honeys-landing .honeys-landing--right--carousel {
   height: 15rem;

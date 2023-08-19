@@ -2,7 +2,7 @@ import React from "react"
 import loadingGifSrc from "../assets/loading.gif"
 
 export default function LoadingScreen() {
-   const language = localStorage.getItem("language") || "en"
+   const language = localStorage.getItem("language") || "hu"
 
    return (
       <div id="loader" style={{

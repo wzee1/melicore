@@ -1,7 +1,7 @@
 import React from "react"
 
 export default function ErrorElement() {
-   const language = localStorage.getItem("language") || "en"
+   const language = localStorage.getItem("language") || "hu"
 
    return (
       <section style={{display: "grid", placeItems: "center", height: "100vh"}}>

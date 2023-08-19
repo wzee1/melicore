@@ -10,7 +10,7 @@ import heroImgSrc from "../../assets/Honeys/Honeys/honeys.webp"
 
 export default function Honeys() {
    const data = useOutletContext();
-   const language = localStorage.getItem("language") || "en"
+   const language = localStorage.getItem("language") || "hu"
    const [searchQuery, setSearchQuery] = useState("")
    let queryFound = true
 
