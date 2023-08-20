@@ -47,7 +47,7 @@ export default function Honeys() {
             showScroll={data.honeysPage.heroSection.showScroll}
          />
 
-         <section className="honeys-grid" id="search">
+         <section className="honeys-grid reveal" id="search">
             <div className="honeys-grid--search">
                <h4>{language === "en" ? "Search for honeys!" : "Keress mézeket!"}</h4>
                <input

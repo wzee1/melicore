@@ -25,7 +25,7 @@ export default function HoneysLanding(props) {
    }
 
    return (
-      <section className="honeys-landing container">
+      <section className="honeys-landing container reveal">
          <div className="honeys-landing--left">
             <h2 className="honeys-landing--left--header">
                {data.landingPage.honeysSection.header}<span className="dot-color">.</span>

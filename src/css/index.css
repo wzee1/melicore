@@ -231,6 +231,28 @@ header.nav-desktop {
   cursor: pointer;
 }
 
+.reveal {
+  position: relative;
+  transform: translateY(5rem);
+  opacity: 0;
+  transition: opacity 2s ease, transform 2s ease;
+}
+
+.reveal.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+@keyframes reveal {
+  from {
+    transform: translateY(-5rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 @media screen and (min-width: 900px) {
   header.nav-mobile {
     display: none;

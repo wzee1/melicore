@@ -18,7 +18,7 @@ export default function AboutUs(props) {
    }
 
    return (
-      <section className="about-us container" id="about-us">
+      <section className="about-us container reveal" id="about-us">
          <h2 className="about-us--header">
             {data.landingPage.aboutUsSection.header}
             <span className="dot-color">.</span>

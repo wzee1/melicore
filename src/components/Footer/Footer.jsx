@@ -45,17 +45,36 @@ export default function Footer(props) {
                </h3>
 
                <ul>
-                  <li style={{display: "flex", alignItems: "center", gap: ".5rem"}}>
-                     <img src={facebookSrc} alt="Facebook logo"/>
-                     <span> /melicore</span>
+                  <li>
+                     <a href="https://www.facebook.com/melicoreofficial" 
+                        target="_blank"
+                        style={{
+                           display: "flex",
+                           alignItems: "center",
+                           gap: ".5rem"
+                        }}
+                     >
+                        <img src={facebookSrc} alt="Facebook logo"/>
+                        <span> /melicore</span>
+                     </a>
                   </li>
-                  <li style={{display: "flex", alignItems: "center", gap: ".5rem"}}>
-                     <img
-                        src={instagramSrc}
-                        style={{width: "32px", height: "auto"}}
-                        alt="Facebook logo"
-                     />
-                     <span> /melicore</span>
+
+                  <li>
+                     <a href="https://www.instagram.com/melicoreofficial"
+                        target="_blank"
+                        style={{
+                           display: "flex",
+                           alignItems: "center",
+                           gap: ".5rem"
+                        }}
+                     >
+                        <img
+                           src={instagramSrc}
+                           style={{width: "32px", height: "auto"}}
+                           alt="Facebook logo"
+                        />
+                        <span> /melicore</span>
+                     </a>
                   </li>
                </ul>
             </div>

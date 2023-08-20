@@ -15,6 +15,7 @@ import NotFound from "./pages/NotFound/NotFound"
 import ErrorElement from "./components/ErrorElement"
 import LoadingScreen from "./components/LoadingScreen"
 import PrivacyPolicy from "./pages/Policies/PrivacyPolicy"
+import Blog from "./pages/Blog/Blog"
 
 
 const router = createBrowserRouter(createRoutesFromElements(
@@ -22,7 +23,7 @@ const router = createBrowserRouter(createRoutesFromElements(
     <Route index element={<LandingPage />} />
     <Route path="honeys" element={<Honeys />} />
     <Route path="honeys/:id" element={<HoneyID />} />
-    <Route path="blog" element={<h1>Blog</h1>} />
+    <Route path="blog" element={<Blog />} />
 
     <Route path="privacy-policy" element={<PrivacyPolicy />} />
     <Route path="terms-of-service" element={<PrivacyPolicy />} />
@@ -46,6 +47,21 @@ export default function App() {
     document.body.style.overflow = loading ? "hidden" : "auto"
   }, [loading])
   
+  // Scroll Reveal for sections
+  window.addEventListener("scroll", () => {
+    var reveals = document.querySelectorAll(".reveal")  
+
+    for (var i = 0; i < reveals.length; i++) {
+        var windowHeight = window.innerHeight
+        var revealTop = reveals[i].getBoundingClientRect().top
+        var revealPoint = 150
+
+        if (revealTop < windowHeight - revealPoint) {
+          reveals[i].classList.add("active")
+        }
+    }
+  })
+
   return (
     <>
       {loading ? <LoadingScreen /> : null}
