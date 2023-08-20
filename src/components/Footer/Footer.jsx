@@ -87,7 +87,7 @@ export default function Footer(props) {
 
             <div className="footer-policies">
                <h3>
-                  Irányelveink<span className="dot-color">.</span>
+                  {data.footer.col4.header}<span className="dot-color">.</span>
                </h3>
 
                <ul>
