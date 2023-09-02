@@ -26,6 +26,10 @@ section.hero {
    left: 2rem;
 }
 
+.hero-left--desc .quote-div {
+   margin-left: 3rem;
+}
+
 // Media queries for hero
 
 @media screen and (min-width: 960px) {
@@ -70,6 +74,31 @@ section.hero {
          top: -2rem;
          right: -2.5rem;
          width: 51rem;
+      }
+   }
+}
+
+// Bug fixes (.honeys-quote img)
+@media screen and (min-width: 730px) {
+   section.hero {
+      .hero-left--desc img {
+         top: 10rem;
+      }
+   }
+}
+
+@media screen and (min-width: 1100px) {
+   section.hero {
+      .hero-left--desc img {
+         top: 15rem;
+      }
+   }
+}
+
+@media screen and (min-width: 1137px) {
+   section.hero {
+      .hero-left--desc img {
+         top: 11rem;
       }
    }
 }
@@ -173,6 +202,10 @@ section.hero {
       margin-top: 18rem;
       grid-template-columns: 1fr 1fr 1fr;
       max-width: 100rem;
+
+      .honeys-landing--right--carousel--box {
+         zoom: .875;
+      }
    }
 }
 

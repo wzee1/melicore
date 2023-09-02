@@ -18,6 +18,10 @@ section.hero .honeys-hero-image {
   left: 2rem;
 }
 
+.hero-left--desc .quote-div {
+  margin-left: 3rem;
+}
+
 @media screen and (min-width: 960px) {
   section.hero .honeys-hero-image {
     width: 25rem;
@@ -47,6 +51,21 @@ section.hero .honeys-hero-image {
     top: -2rem;
     right: -2.5rem;
     width: 51rem;
+  }
+}
+@media screen and (min-width: 730px) {
+  section.hero .hero-left--desc img {
+    top: 10rem;
+  }
+}
+@media screen and (min-width: 1100px) {
+  section.hero .hero-left--desc img {
+    top: 15rem;
+  }
+}
+@media screen and (min-width: 1137px) {
+  section.hero .hero-left--desc img {
+    top: 11rem;
   }
 }
 .honeys-grid {
@@ -129,6 +148,9 @@ section.hero .honeys-hero-image {
     margin-top: 18rem;
     grid-template-columns: 1fr 1fr 1fr;
     max-width: 100rem;
+  }
+  .honeys-grid .honeys-landing--right--carousel--box {
+    zoom: 0.875;
   }
 }
 section.hero .honeyid-hero-image {

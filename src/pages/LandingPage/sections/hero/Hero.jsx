@@ -98,7 +98,7 @@ export default function Hero(props) {
                      </>
 
                      : (isHoneysPage
-                        ? <div style={{marginTop: "4rem", marginLeft: "3rem"}}>
+                        ? <div className="quote-div">
                               <img src={qouteSrc} alt="Qoute Mark"
                                  className="honeys-qoute"
                               />

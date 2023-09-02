@@ -290,7 +290,8 @@ header.nav-desktop {
   section.hero .hero-left--desc {
     max-width: -moz-max-content;
     max-width: max-content;
-    margin-left: 0 !important;
+    margin-left: 0;
+    margin-top: 3rem;
   }
   section.hero .hero-left--desc img {
     display: none;
@@ -341,17 +342,22 @@ header.nav-desktop {
     max-width: 380px;
   }
   section.hero .hero-left--desc {
-    margin-left: 0 !important;
+    margin-top: 5rem;
     width: 80%;
   }
   section.hero .hero-left--desc img {
-    display: none;
+    margin-top: 1rem;
   }
   section.hero .hero-right--rectangle {
     display: unset;
   }
   footer .link-container .footer-contact ul {
     display: unset;
+  }
+}
+@media screen and (min-width: 422px) {
+  section.hero .hero-left--desc {
+    margin-top: 7rem;
   }
 }
 @media screen and (min-width: 451px) and (max-width: 500px) {
@@ -362,7 +368,7 @@ header.nav-desktop {
     width: 80%;
   }
   section.hero .hero-left--desc img {
-    top: 7rem;
+    top: 9rem;
   }
   section.honeys-landing .honeys-landing--right {
     margin-inline: auto;

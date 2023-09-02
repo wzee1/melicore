@@ -30,6 +30,10 @@ section.about-us {
                margin-bottom: 2rem;
             }
 
+            p {
+               max-width: 20rem !important;
+            }
+
             transition: transform 300ms;
             &:hover {
                transform: translateY(-.5rem)

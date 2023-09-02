@@ -47,7 +47,7 @@ section.honeys-landing .carousel-status {
   border-radius: 1rem;
 }
 .slide p {
-  width: 15rem;
+  max-width: 15rem !important;
   margin-bottom: 1rem;
 }
 .slide .button {
