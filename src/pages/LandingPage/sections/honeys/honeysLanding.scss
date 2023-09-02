@@ -55,8 +55,10 @@ section.honeys-landing {
    border-radius: 1rem;
 
    p {
-      max-width: 15rem !important;
       margin-bottom: 1rem;
+      min-width: 14.99rem !important;
+      width: 15rem !important;
+      max-width: 15rem !important;
    }
 
    .button {
@@ -69,7 +71,7 @@ section.honeys-landing {
 @media screen and (min-width: 351px) and (max-width: 450px) {
    section.honeys-landing {
       .honeys-landing--right {
-         zoom: .7;
+         zoom: .8;
       }
    }
 }

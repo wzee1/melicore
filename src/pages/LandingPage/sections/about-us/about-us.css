@@ -29,7 +29,9 @@ section.about-us .about-us--wrapper .about-us--content--box h3 {
   margin-bottom: 2rem;
 }
 section.about-us .about-us--wrapper .about-us--content--box p {
-  max-width: 20rem !important;
+  min-width: 20.99rem !important;
+  width: 21rem !important;
+  max-width: 21rem !important;
 }
 section.about-us .about-us--wrapper .about-us--content--box:hover {
   transform: translateY(-0.5rem);
@@ -40,7 +42,7 @@ section.about-us .about-us--wrapper .about-us--image {
 
 @media screen and (min-width: 351px) and (max-width: 450px) {
   section.about-us .about-us--wrapper .about-us--content--box {
-    zoom: 0.7;
+    zoom: 0.8;
   }
 }
 @media screen and (min-width: 900px) {
@@ -59,6 +61,11 @@ section.about-us .about-us--wrapper .about-us--image {
   }
   section.about-us .about-us--wrapper .about-us--content--box {
     width: 30rem;
+  }
+  section.about-us .about-us--wrapper .about-us--content--box p {
+    min-width: unset !important;
+    width: unset !important;
+    max-width: unset !important;
   }
   section.about-us .about-us--wrapper .about-us--image {
     display: unset;

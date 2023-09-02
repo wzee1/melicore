@@ -27,7 +27,9 @@ section.hero {
 }
 
 .hero-left--desc .quote-div {
-   margin-left: 3rem;
+   width: 90%;
+   margin-left: 0;
+   margin-top: 0;
 }
 
 // Media queries for hero
@@ -79,6 +81,38 @@ section.hero {
 }
 
 // Bug fixes (.honeys-quote img)
+@media screen and (min-width: 350px) {
+   section.hero {
+      .hero-left--desc img {
+         top: 12rem;
+      }
+   }
+}
+
+@media screen and (min-width: 395px) {
+   section.hero {
+      .hero-left--desc img {
+         top: 10rem;
+      }
+   }
+}
+
+@media screen and (min-width: 422px) {
+   section.hero {
+      .hero-left--desc img {
+         top: 7rem;
+      }
+   }
+}
+
+@media screen and (min-width: 451px) {
+   .hero-left--desc .quote-div {
+      width: 90%;
+      margin-left: 3rem;
+      margin-top: 5rem;
+   }
+}
+
 @media screen and (min-width: 730px) {
    section.hero {
       .hero-left--desc img {
@@ -87,10 +121,18 @@ section.hero {
    }
 }
 
+@media screen and (min-width: 780px) {
+   section.hero {
+      .hero-left--desc img {
+         top: 8rem;
+      }
+   }
+}
+
 @media screen and (min-width: 1100px) {
    section.hero {
       .hero-left--desc img {
-         top: 15rem;
+         top: 14rem;
       }
    }
 }
@@ -98,7 +140,7 @@ section.hero {
 @media screen and (min-width: 1137px) {
    section.hero {
       .hero-left--desc img {
-         top: 11rem;
+         top: 10rem;
       }
    }
 }
@@ -161,6 +203,12 @@ section.hero {
 // Media queries for honeys
 
 @media screen and (min-width: 351px) and (max-width: 450px) {
+   .hero-left--desc .quote-div {
+      width: 100%;
+      margin-left: 3rem;
+      margin-top: 5rem;
+   }
+
    section.honeys-grid {
       .honeys-landing--right--carousel--box {
          zoom: .7;
@@ -229,7 +277,7 @@ section.hero {
 
 @media screen and (min-width: 960px) {
    section.hero {
-      .honeyid-hero-image{
+      .honeyid-hero-image {
          width: 15rem;
          transform: translate(calc(8vw - 4rem), -7rem);
       }

@@ -342,11 +342,7 @@ header.nav-desktop {
     max-width: 380px;
   }
   section.hero .hero-left--desc {
-    margin-top: 5rem;
     width: 80%;
-  }
-  section.hero .hero-left--desc img {
-    margin-top: 1rem;
   }
   section.hero .hero-right--rectangle {
     display: unset;
@@ -355,20 +351,12 @@ header.nav-desktop {
     display: unset;
   }
 }
-@media screen and (min-width: 422px) {
-  section.hero .hero-left--desc {
-    margin-top: 7rem;
-  }
-}
 @media screen and (min-width: 451px) and (max-width: 500px) {
   section.hero .hero-left {
     max-width: unset;
   }
   section.hero .hero-left--desc {
     width: 80%;
-  }
-  section.hero .hero-left--desc img {
-    top: 9rem;
   }
   section.honeys-landing .honeys-landing--right {
     margin-inline: auto;

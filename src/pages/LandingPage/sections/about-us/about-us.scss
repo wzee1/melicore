@@ -31,7 +31,9 @@ section.about-us {
             }
 
             p {
-               max-width: 20rem !important;
+               min-width: 20.99rem !important;
+               width: 21rem !important;
+               max-width: 21rem !important;
             }
 
             transition: transform 300ms;
@@ -53,7 +55,7 @@ section.about-us {
    section.about-us {
       .about-us--wrapper {
          .about-us--content {
-            &--box { zoom: .7 }
+            &--box { zoom: .8 }
          }
       }
    }
@@ -80,6 +82,12 @@ section.about-us {
    
             &--box {
                width: 30rem;
+
+               p {
+                  min-width: unset !important;
+                  width: unset !important;
+                  max-width: unset !important;
+               }
             }
          }
    

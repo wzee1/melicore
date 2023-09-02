@@ -47,8 +47,10 @@ section.honeys-landing .carousel-status {
   border-radius: 1rem;
 }
 .slide p {
-  max-width: 15rem !important;
   margin-bottom: 1rem;
+  min-width: 14.99rem !important;
+  width: 15rem !important;
+  max-width: 15rem !important;
 }
 .slide .button {
   margin-bottom: 1rem;
@@ -56,7 +58,7 @@ section.honeys-landing .carousel-status {
 
 @media screen and (min-width: 351px) and (max-width: 450px) {
   section.honeys-landing .honeys-landing--right {
-    zoom: 0.7;
+    zoom: 0.8;
   }
 }
 @media screen and (min-width: 600px) {
